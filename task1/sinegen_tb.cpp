@@ -36,9 +36,9 @@ int main(int argc, char **argv, char **env) {
             top->eval();
         }
 
-        vbdPlot(int(top->dout), 0, 255);
+        top->incr = vbdValue()/10;
 
-        
+        vbdPlot(int(top->dout), 0, 255);
 
         if(Verilated::gotFinish() || (vbdGetkey() == 'q')) exit(0);
     }
