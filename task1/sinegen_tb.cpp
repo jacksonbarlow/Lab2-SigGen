@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **env) {
 
     // init simulation inputs
     top->clk = 1;
-    top->rst = 1;
+    top->rst = 0;
     top->en = 0;
     top->incr = 1;
 
