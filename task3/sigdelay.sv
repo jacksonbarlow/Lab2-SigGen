@@ -1,5 +1,5 @@
 module sigdelay #(
-    parameter A_WIDTH = 8,
+    parameter A_WIDTH = 9,
               D_WIDTH = 8
 )(
     // interface signals

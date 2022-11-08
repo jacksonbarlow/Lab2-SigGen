@@ -14,9 +14,9 @@ VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__0(Vsigdelay___024root* vl
     vlSelf->__Vdly__sigdelay__DOT__addr = vlSelf->sigdelay__DOT__addr;
     vlSelf->__Vdly__sigdelay__DOT__addr = ((IData)(vlSelf->rst)
                                             ? 0U : 
-                                           (0xffU & 
-                                            ((IData)(1U) 
-                                             + (IData)(vlSelf->sigdelay__DOT__addr))));
+                                           (0x1ffU 
+                                            & ((IData)(1U) 
+                                               + (IData)(vlSelf->sigdelay__DOT__addr))));
 }
 
 VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__1(Vsigdelay___024root* vlSelf) {
@@ -24,7 +24,7 @@ VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__1(Vsigdelay___024root* vl
     Vsigdelay__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vsigdelay___024root___sequent__TOP__1\n"); );
     // Init
-    CData/*7:0*/ __Vdlyvdim0__sigdelay__DOT__micRam__DOT__ram_array__v0;
+    SData/*8:0*/ __Vdlyvdim0__sigdelay__DOT__micRam__DOT__ram_array__v0;
     CData/*7:0*/ __Vdlyvval__sigdelay__DOT__micRam__DOT__ram_array__v0;
     CData/*0:0*/ __Vdlyvset__sigdelay__DOT__micRam__DOT__ram_array__v0;
     // Body
@@ -38,8 +38,8 @@ VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__1(Vsigdelay___024root* vl
             = vlSelf->mic_signal;
         __Vdlyvset__sigdelay__DOT__micRam__DOT__ram_array__v0 = 1U;
         __Vdlyvdim0__sigdelay__DOT__micRam__DOT__ram_array__v0 
-            = (0xffU & ((IData)(vlSelf->sigdelay__DOT__addr) 
-                        + (IData)(vlSelf->offset)));
+            = (0x1ffU & ((IData)(vlSelf->sigdelay__DOT__addr) 
+                         + (IData)(vlSelf->offset)));
     }
     if (__Vdlyvset__sigdelay__DOT__micRam__DOT__ram_array__v0) {
         vlSelf->sigdelay__DOT__micRam__DOT__ram_array[__Vdlyvdim0__sigdelay__DOT__micRam__DOT__ram_array__v0] 
@@ -90,5 +90,7 @@ void Vsigdelay___024root___eval_debug_assertions(Vsigdelay___024root* vlSelf) {
         Verilated::overWidthError("wr");}
     if (VL_UNLIKELY((vlSelf->rd & 0xfeU))) {
         Verilated::overWidthError("rd");}
+    if (VL_UNLIKELY((vlSelf->offset & 0xfe00U))) {
+        Verilated::overWidthError("offset");}
 }
 #endif  // VL_DEBUG

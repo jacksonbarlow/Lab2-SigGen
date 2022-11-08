@@ -1,5 +1,5 @@
 module ram2ports #(
-    parameter   ADDRESS_WIDTH = 8,
+    parameter   ADDRESS_WIDTH = 9,
                 DATA_WIDTH = 8
 )(
     input logic                         clk,
@@ -19,4 +19,5 @@ always_ff @(posedge clk) begin
     if (rd_en == 1'b1)
         dout <= ram_array [rd_addr];
 end
+
 endmodule

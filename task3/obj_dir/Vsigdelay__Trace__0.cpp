@@ -27,12 +27,12 @@ void Vsigdelay___024root__trace_chg_sub_0(Vsigdelay___024root* vlSelf, Verilated
     bufp->chgBit(oldp+1,(vlSelf->rst));
     bufp->chgBit(oldp+2,(vlSelf->wr));
     bufp->chgBit(oldp+3,(vlSelf->rd));
-    bufp->chgCData(oldp+4,(vlSelf->offset),8);
+    bufp->chgSData(oldp+4,(vlSelf->offset),9);
     bufp->chgCData(oldp+5,(vlSelf->mic_signal),8);
     bufp->chgCData(oldp+6,(vlSelf->delayed_signal),8);
-    bufp->chgCData(oldp+7,(vlSelf->sigdelay__DOT__addr),8);
-    bufp->chgCData(oldp+8,((0xffU & ((IData)(vlSelf->sigdelay__DOT__addr) 
-                                     + (IData)(vlSelf->offset)))),8);
+    bufp->chgSData(oldp+7,(vlSelf->sigdelay__DOT__addr),9);
+    bufp->chgSData(oldp+8,((0x1ffU & ((IData)(vlSelf->sigdelay__DOT__addr) 
+                                      + (IData)(vlSelf->offset)))),9);
 }
 
 void Vsigdelay___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {
